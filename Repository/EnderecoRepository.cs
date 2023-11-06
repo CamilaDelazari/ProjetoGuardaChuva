@@ -34,7 +34,7 @@ namespace ProjetoGuardaChuva.Repository
                 {
                     command.Connection = connection;
 
-                    command.CommandText = "INSERT INTO endereco (Cep, Rua, Bairro, Numero) VALUES (@Cep, @Rua, @Bairro, @Numero)";
+                    command.CommandText = "INSERT INTO endereco (Cep, Rua, Bairro, Numero, IdSetor) VALUES (@Cep, @Rua, @Bairro, @Numero, @IdSetor)";
 
                     DbParameter cepParam = command.CreateParameter();
                     cepParam.ParameterName = "@Cep";
@@ -56,6 +56,11 @@ namespace ProjetoGuardaChuva.Repository
                     numeroParam.Value = endereco.Numero;
                     command.Parameters.Add(numeroParam);
 
+                    DbParameter IdSetorParam = command.CreateParameter();
+                    IdSetorParam.ParameterName = "@IdSetor";
+                    IdSetorParam.Value = endereco.Numero;
+                    command.Parameters.Add(IdSetorParam);
+
                     command.ExecuteNonQuery();
                 }
             }
@@ -72,7 +77,7 @@ namespace ProjetoGuardaChuva.Repository
                 {
                     command.Connection = connection;
 
-                    command.CommandText = "UPDATE endereco SET Cep = @Cep, Rua = @Rua, Bairro = @Bairro, Numero = @Numero WHERE Id = @Id";
+                    command.CommandText = "UPDATE endereco SET Cep = @Cep, Rua = @Rua, Bairro = @Bairro, Numero = @Numero, IdSetor = @IdSetor WHERE Id = @Id";
 
                     DbParameter idParam = command.CreateParameter();
                     idParam.ParameterName = "@Id";
@@ -98,6 +103,11 @@ namespace ProjetoGuardaChuva.Repository
                     numeroParam.ParameterName = "@Numero";
                     numeroParam.Value = endereco.Numero;
                     command.Parameters.Add(numeroParam);
+
+                    DbParameter IdSetorParam = command.CreateParameter();
+                    IdSetorParam.ParameterName = "@IdSetor";
+                    IdSetorParam.Value = endereco.Numero;
+                    command.Parameters.Add(IdSetorParam);
 
                     command.ExecuteNonQuery();
                 }

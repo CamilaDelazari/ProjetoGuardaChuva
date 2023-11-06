@@ -35,14 +35,16 @@
             txtNomeArea = new TextBox();
             cmbIDArea = new ComboBox();
             label2 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            btnCancelar = new Button();
+            btnGravar = new Button();
             btnInserir = new Button();
             tabPage2 = new TabPage();
+            txtCoordenadas = new TextBox();
+            label16 = new Label();
             label19 = new Label();
             txtInclinacao = new TextBox();
             label18 = new Label();
-            comboBox2 = new ComboBox();
+            cmbSetor = new ComboBox();
             label14 = new Label();
             lblResultadoCalculo = new Label();
             txtBaseTelhado = new TextBox();
@@ -50,24 +52,24 @@
             label13 = new Label();
             label12 = new Label();
             btnCalcular = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            textBox7 = new TextBox();
+            btnCancelarDomicilio = new Button();
+            btnGravarDomicilio = new Button();
+            btnInserirDomicilio = new Button();
+            txtNumeroContrato = new TextBox();
             label11 = new Label();
-            textBox6 = new TextBox();
+            txtNumero = new TextBox();
             label10 = new Label();
-            textBox5 = new TextBox();
+            txtRua = new TextBox();
             label9 = new Label();
-            textBox4 = new TextBox();
+            txtCidade = new TextBox();
             label8 = new Label();
-            textBox3 = new TextBox();
+            txtEstado = new TextBox();
             label7 = new Label();
-            textBox2 = new TextBox();
+            txtBairro = new TextBox();
             label6 = new Label();
-            textBox1 = new TextBox();
+            txtCEP = new TextBox();
             label5 = new Label();
-            comboBox1 = new ComboBox();
+            cmbIdDomicilio = new ComboBox();
             label4 = new Label();
             tabPage3 = new TabPage();
             button9 = new Button();
@@ -114,8 +116,8 @@
             tabPage1.Controls.Add(txtNomeArea);
             tabPage1.Controls.Add(cmbIDArea);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(button2);
-            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(btnCancelar);
+            tabPage1.Controls.Add(btnGravar);
             tabPage1.Controls.Add(btnInserir);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -160,23 +162,24 @@
             label2.TabIndex = 3;
             label2.Text = "Nome do Setor:";
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.Location = new Point(187, 94);
-            button2.Name = "button2";
-            button2.Size = new Size(79, 25);
-            button2.TabIndex = 2;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(187, 94);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(79, 25);
+            btnCancelar.TabIndex = 2;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnGravar
             // 
-            button1.Location = new Point(102, 94);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 25);
-            button1.TabIndex = 1;
-            button1.Text = "Gravar";
-            button1.UseVisualStyleBackColor = true;
+            btnGravar.Location = new Point(102, 94);
+            btnGravar.Name = "btnGravar";
+            btnGravar.Size = new Size(79, 25);
+            btnGravar.TabIndex = 1;
+            btnGravar.Text = "Gravar";
+            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnInserir
             // 
@@ -186,14 +189,17 @@
             btnInserir.TabIndex = 0;
             btnInserir.Text = "Inserir";
             btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.Click += btnInserir_Click;
             // 
             // tabPage2
             // 
             tabPage2.BackColor = Color.LightGray;
+            tabPage2.Controls.Add(txtCoordenadas);
+            tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(label19);
             tabPage2.Controls.Add(txtInclinacao);
             tabPage2.Controls.Add(label18);
-            tabPage2.Controls.Add(comboBox2);
+            tabPage2.Controls.Add(cmbSetor);
             tabPage2.Controls.Add(label14);
             tabPage2.Controls.Add(lblResultadoCalculo);
             tabPage2.Controls.Add(txtBaseTelhado);
@@ -201,24 +207,24 @@
             tabPage2.Controls.Add(label13);
             tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(btnCalcular);
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(button4);
-            tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(textBox7);
+            tabPage2.Controls.Add(btnCancelarDomicilio);
+            tabPage2.Controls.Add(btnGravarDomicilio);
+            tabPage2.Controls.Add(btnInserirDomicilio);
+            tabPage2.Controls.Add(txtNumeroContrato);
             tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(textBox6);
+            tabPage2.Controls.Add(txtNumero);
             tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(textBox5);
+            tabPage2.Controls.Add(txtRua);
             tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(textBox4);
+            tabPage2.Controls.Add(txtCidade);
             tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(txtEstado);
             tabPage2.Controls.Add(label7);
-            tabPage2.Controls.Add(textBox2);
+            tabPage2.Controls.Add(txtBairro);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(txtCEP);
             tabPage2.Controls.Add(label5);
-            tabPage2.Controls.Add(comboBox1);
+            tabPage2.Controls.Add(cmbIdDomicilio);
             tabPage2.Controls.Add(label4);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
@@ -228,10 +234,27 @@
             tabPage2.Text = "Cadastro de Domicílio";
             tabPage2.Click += tabPage2_Click;
             // 
+            // txtCoordenadas
+            // 
+            txtCoordenadas.Location = new Point(105, 178);
+            txtCoordenadas.Name = "txtCoordenadas";
+            txtCoordenadas.Size = new Size(421, 23);
+            txtCoordenadas.TabIndex = 31;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(9, 184);
+            label16.Name = "label16";
+            label16.Size = new Size(80, 15);
+            label16.TabIndex = 30;
+            label16.Text = "Coordenadas:";
+            label16.Click += label16_Click;
+            // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(457, 186);
+            label19.Location = new Point(457, 212);
             label19.Name = "label19";
             label19.Size = new Size(72, 15);
             label19.TabIndex = 29;
@@ -239,7 +262,7 @@
             // 
             // txtInclinacao
             // 
-            txtInclinacao.Location = new Point(404, 181);
+            txtInclinacao.Location = new Point(404, 207);
             txtInclinacao.Name = "txtInclinacao";
             txtInclinacao.Size = new Size(48, 23);
             txtInclinacao.TabIndex = 28;
@@ -247,19 +270,19 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(297, 186);
+            label18.Location = new Point(297, 212);
             label18.Name = "label18";
             label18.Size = new Size(108, 15);
             label18.TabIndex = 27;
             label18.Text = "Inclinação Telhado:";
             // 
-            // comboBox2
+            // cmbSetor
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(105, 38);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(324, 23);
-            comboBox2.TabIndex = 26;
+            cmbSetor.FormattingEnabled = true;
+            cmbSetor.Location = new Point(105, 38);
+            cmbSetor.Name = "cmbSetor";
+            cmbSetor.Size = new Size(324, 23);
+            cmbSetor.TabIndex = 26;
             // 
             // label14
             // 
@@ -275,7 +298,7 @@
             lblResultadoCalculo.AutoSize = true;
             lblResultadoCalculo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblResultadoCalculo.ForeColor = SystemColors.Highlight;
-            lblResultadoCalculo.Location = new Point(6, 244);
+            lblResultadoCalculo.Location = new Point(6, 261);
             lblResultadoCalculo.Name = "lblResultadoCalculo";
             lblResultadoCalculo.Size = new Size(141, 20);
             lblResultadoCalculo.TabIndex = 24;
@@ -283,7 +306,7 @@
             // 
             // txtBaseTelhado
             // 
-            txtBaseTelhado.Location = new Point(105, 209);
+            txtBaseTelhado.Location = new Point(105, 235);
             txtBaseTelhado.Name = "txtBaseTelhado";
             txtBaseTelhado.Size = new Size(186, 23);
             txtBaseTelhado.TabIndex = 23;
@@ -291,7 +314,7 @@
             // 
             // txtAreaTelhado
             // 
-            txtAreaTelhado.Location = new Point(105, 181);
+            txtAreaTelhado.Location = new Point(105, 207);
             txtAreaTelhado.Name = "txtAreaTelhado";
             txtAreaTelhado.Size = new Size(186, 23);
             txtAreaTelhado.TabIndex = 22;
@@ -300,7 +323,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(7, 212);
+            label13.Location = new Point(7, 238);
             label13.Name = "label13";
             label13.Size = new Size(78, 15);
             label13.TabIndex = 21;
@@ -310,7 +333,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(7, 186);
+            label12.Location = new Point(7, 212);
             label12.Name = "label12";
             label12.Size = new Size(86, 15);
             label12.TabIndex = 20;
@@ -319,7 +342,7 @@
             // 
             // btnCalcular
             // 
-            btnCalcular.Location = new Point(310, 209);
+            btnCalcular.Location = new Point(310, 235);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(82, 22);
             btnCalcular.TabIndex = 19;
@@ -327,42 +350,42 @@
             btnCalcular.UseVisualStyleBackColor = true;
             btnCalcular.Click += btnCalcular_Click;
             // 
-            // button5
+            // btnCancelarDomicilio
             // 
-            button5.Location = new Point(185, 277);
-            button5.Name = "button5";
-            button5.Size = new Size(82, 22);
-            button5.TabIndex = 18;
-            button5.Text = "Cancelar";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnCancelarDomicilio.Location = new Point(184, 288);
+            btnCancelarDomicilio.Name = "btnCancelarDomicilio";
+            btnCancelarDomicilio.Size = new Size(82, 22);
+            btnCancelarDomicilio.TabIndex = 18;
+            btnCancelarDomicilio.Text = "Cancelar";
+            btnCancelarDomicilio.UseVisualStyleBackColor = true;
+            btnCancelarDomicilio.Click += button5_Click;
             // 
-            // button4
+            // btnGravarDomicilio
             // 
-            button4.Location = new Point(97, 277);
-            button4.Name = "button4";
-            button4.Size = new Size(82, 22);
-            button4.TabIndex = 17;
-            button4.Text = "Gravar";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnGravarDomicilio.Location = new Point(96, 288);
+            btnGravarDomicilio.Name = "btnGravarDomicilio";
+            btnGravarDomicilio.Size = new Size(82, 22);
+            btnGravarDomicilio.TabIndex = 17;
+            btnGravarDomicilio.Text = "Gravar";
+            btnGravarDomicilio.UseVisualStyleBackColor = true;
+            btnGravarDomicilio.Click += button4_Click;
             // 
-            // button3
+            // btnInserirDomicilio
             // 
-            button3.Location = new Point(8, 277);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 22);
-            button3.TabIndex = 16;
-            button3.Text = "Inserir";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnInserirDomicilio.Location = new Point(7, 288);
+            btnInserirDomicilio.Name = "btnInserirDomicilio";
+            btnInserirDomicilio.Size = new Size(82, 22);
+            btnInserirDomicilio.TabIndex = 16;
+            btnInserirDomicilio.Text = "Inserir";
+            btnInserirDomicilio.UseVisualStyleBackColor = true;
+            btnInserirDomicilio.Click += btnInserirDomicilio_Click;
             // 
-            // textBox7
+            // txtNumeroContrato
             // 
-            textBox7.Location = new Point(291, 11);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(138, 23);
-            textBox7.TabIndex = 15;
+            txtNumeroContrato.Location = new Point(291, 11);
+            txtNumeroContrato.Name = "txtNumeroContrato";
+            txtNumeroContrato.Size = new Size(138, 23);
+            txtNumeroContrato.TabIndex = 15;
             // 
             // label11
             // 
@@ -373,13 +396,13 @@
             label11.TabIndex = 14;
             label11.Text = "Número de Contato:";
             // 
-            // textBox6
+            // txtNumero
             // 
-            textBox6.Location = new Point(458, 152);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(68, 23);
-            textBox6.TabIndex = 13;
-            textBox6.TextChanged += textBox6_TextChanged;
+            txtNumero.Location = new Point(458, 152);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(68, 23);
+            txtNumero.TabIndex = 13;
+            txtNumero.TextChanged += textBox6_TextChanged;
             // 
             // label10
             // 
@@ -391,13 +414,13 @@
             label10.Text = "Número:";
             label10.Click += label10_Click;
             // 
-            // textBox5
+            // txtRua
             // 
-            textBox5.Location = new Point(105, 152);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(287, 23);
-            textBox5.TabIndex = 11;
-            textBox5.TextChanged += textBox5_TextChanged;
+            txtRua.Location = new Point(105, 152);
+            txtRua.Name = "txtRua";
+            txtRua.Size = new Size(287, 23);
+            txtRua.TabIndex = 11;
+            txtRua.TextChanged += textBox5_TextChanged;
             // 
             // label9
             // 
@@ -409,12 +432,12 @@
             label9.Text = "Rua:";
             label9.Click += label9_Click;
             // 
-            // textBox4
+            // txtCidade
             // 
-            textBox4.Location = new Point(224, 94);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(302, 23);
-            textBox4.TabIndex = 9;
+            txtCidade.Location = new Point(224, 94);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(302, 23);
+            txtCidade.TabIndex = 9;
             // 
             // label8
             // 
@@ -425,12 +448,12 @@
             label8.TabIndex = 8;
             label8.Text = "Cidade:";
             // 
-            // textBox3
+            // txtEstado
             // 
-            textBox3.Location = new Point(105, 94);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(54, 23);
-            textBox3.TabIndex = 7;
+            txtEstado.Location = new Point(105, 94);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(54, 23);
+            txtEstado.TabIndex = 7;
             // 
             // label7
             // 
@@ -441,12 +464,12 @@
             label7.TabIndex = 6;
             label7.Text = "Estado:";
             // 
-            // textBox2
+            // txtBairro
             // 
-            textBox2.Location = new Point(105, 123);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(421, 23);
-            textBox2.TabIndex = 5;
+            txtBairro.Location = new Point(105, 123);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(421, 23);
+            txtBairro.TabIndex = 5;
             // 
             // label6
             // 
@@ -457,12 +480,12 @@
             label6.TabIndex = 4;
             label6.Text = "Bairro:";
             // 
-            // textBox1
+            // txtCEP
             // 
-            textBox1.Location = new Point(105, 66);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(111, 23);
-            textBox1.TabIndex = 3;
+            txtCEP.Location = new Point(105, 66);
+            txtCEP.Name = "txtCEP";
+            txtCEP.Size = new Size(111, 23);
+            txtCEP.TabIndex = 3;
             // 
             // label5
             // 
@@ -473,13 +496,13 @@
             label5.TabIndex = 2;
             label5.Text = "CEP:";
             // 
-            // comboBox1
+            // cmbIdDomicilio
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(105, 11);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(54, 23);
-            comboBox1.TabIndex = 1;
+            cmbIdDomicilio.FormattingEnabled = true;
+            cmbIdDomicilio.Location = new Point(105, 11);
+            cmbIdDomicilio.Name = "cmbIdDomicilio";
+            cmbIdDomicilio.Size = new Size(54, 23);
+            cmbIdDomicilio.TabIndex = 1;
             // 
             // label4
             // 
@@ -607,30 +630,30 @@
         private TabPage tabPage2;
         private ComboBox cmbIDArea;
         private Label label2;
-        private Button button2;
-        private Button button1;
+        private Button btnCancelar;
+        private Button btnGravar;
         private Button btnInserir;
         private TabPage tabPage3;
         private Label label3;
         private TextBox txtNomeArea;
         private Label label4;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
+        private ComboBox cmbIdDomicilio;
+        private TextBox txtEstado;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox txtBairro;
         private Label label6;
-        private TextBox textBox1;
+        private TextBox txtCEP;
         private Label label5;
-        private TextBox textBox6;
+        private TextBox txtNumero;
         private Label label10;
-        private TextBox textBox5;
+        private TextBox txtRua;
         private Label label9;
-        private TextBox textBox4;
+        private TextBox txtCidade;
         private Label label8;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private TextBox textBox7;
+        private Button btnCancelarDomicilio;
+        private Button btnGravarDomicilio;
+        private Button btnInserirDomicilio;
+        private TextBox txtNumeroContrato;
         private Label label11;
         private Button btnCalcular;
         private TextBox txtBaseTelhado;
@@ -638,7 +661,7 @@
         private Label label13;
         private Label label12;
         private Label lblResultadoCalculo;
-        private ComboBox comboBox2;
+        private ComboBox cmbSetor;
         private Label label14;
         private ComboBox comboBox4;
         private Label label17;
@@ -650,5 +673,7 @@
         private TextBox txtInclinacao;
         private Label label18;
         private Label label19;
+        private TextBox txtCoordenadas;
+        private Label label16;
     }
 }

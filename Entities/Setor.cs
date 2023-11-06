@@ -9,13 +9,16 @@ namespace ProjetoGuardaChuva.Models
     public class Setor
     {
         public int IdSetor { get; set; }
-        public int IdEndereco { get; set; }
-        public string ApelidoSetor { get; set; }
+        public string? ApelidoSetor { get; set; }
 
-        public Setor(int idSetor, int idEndereco, string apelidoSetor)
+        public Setor(int idSetor, string? apelidoSetor)
         {
             IdSetor = idSetor;
-            IdEndereco = idEndereco;
+            ApelidoSetor = apelidoSetor;
+        }
+
+        public Setor(string? apelidoSetor)
+        {
             ApelidoSetor = apelidoSetor;
         }
     }
