@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using ProjetoGuardaChuva.Models;
+using ProjetoGuardaChuva.Repository;
 using ProjetoGuardaChuva.Repository.Interface;
 using ProjetoGuardaChuva.UseCases;
 
@@ -16,11 +17,12 @@ namespace ProjetoGuardaChuva
 {
     public partial class formCadastroGeral : Form
     {
-        private readonly ISetorRepository setorRepository;
+        private readonly ISetorRepository _setorRepository;
         public formCadastroGeral()
         {
             InitializeComponent();
             CarregarDadosCadastroGeral();
+            _setorRepository = new SetorRepository();
         }
 
         private void CarregarDadosCadastroGeral()
@@ -161,7 +163,7 @@ namespace ProjetoGuardaChuva
         private void btnGravar_Click(object sender, EventArgs e)
         {
             Setor setor = new Setor(txtNomeArea.Text);
-            setorRepository.Add(setor.ApelidoSetor);
+            _setorRepository.Add(setor.ApelidoSetor);
 
         }
     }

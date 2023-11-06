@@ -1,4 +1,5 @@
-﻿using ProjetoGuardaChuva.Models;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using ProjetoGuardaChuva.Models;
 using ProjetoGuardaChuva.Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,22 @@ using System.Threading.Tasks;
 
 namespace ProjetoGuardaChuva.Repository
 {
-    internal class SetorRepository : ISetorRepository
+    public class SetorRepository : ISetorRepository
     {
-        private string ConnectionString = ConfigurationManager.ConnectionStrings["Banco"].ConnectionString;
-
+        private string ConnectionString;
         private DbProviderFactory Factory;
 
         public SetorRepository(string connectionString, string providerName)
         {
             ConnectionString = connectionString;
+            Factory = DbProviderFactories.GetFactory(providerName);
+        }
+
+        public SetorRepository()
+        {
+            ConnectionString = ConfigurationManager.ConnectionStrings["Banco"].ConnectionString;
+            string providerName = ConfigurationManager.ConnectionStrings["Banco"].ProviderName;
+
             Factory = DbProviderFactories.GetFactory(providerName);
         }
 
