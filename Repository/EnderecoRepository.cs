@@ -7,12 +7,14 @@ using System.Data.Common;
 using ProjetoGuardaChuva.Repository.Interface;
 using ProjetoGuardaChuva.Models;
 using System.Configuration.Provider;
+using System.Configuration;
 
 namespace ProjetoGuardaChuva.Repository
 {
     internal class EnderecoRepository : IEnderecoRepository
     {
-        private string ConnectionString;
+        private string ConnectionString = ConfigurationManager.ConnectionStrings["Banco"].ConnectionString;
+
         private DbProviderFactory Factory;
 
         public EnderecoRepository(string connectionString, string providerName)

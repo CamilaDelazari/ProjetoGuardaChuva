@@ -575,7 +575,7 @@
             label1.Name = "label1";
             label1.Size = new Size(207, 21);
             label1.TabIndex = 0;
-            label1.Text = "Escolha um tipo de cadsatro:";
+            label1.Text = "Escolha um tipo de cadastro:";
             // 
             // formCadastroGeral
             // 
